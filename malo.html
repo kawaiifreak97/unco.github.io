@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>unco</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="css/styles.css">
+        
+		<style type="text/css">
+			
+            </style>
+        
+	</head>
+	<body>
+        
+        <script src="css/bootstrap-theme.min.css"></script>
+
+        
+        
+        
+        
+        
+		<script src="js/three.js"></script>
+        <script src="js/three.min.js"></script>
+        <script src="js/stats.min.js"></script>
+        
+
+
+        
+        
+
+
+        
+        
+<script>
+    
+var container;    
+var camera;
+var scene;
+var renderer;
+var raycaster;
+var mouse;   
+var tammesh;
+   
+  
+init();
+animate();
+  
+function init() {
+    
+    scene = new THREE.Scene();
+    camera = new THREE.PerspectiveCamera( 70, window.innerWidth / window.innerHeight, 1, 1000);
+  
+    var light = new THREE.DirectionalLight( 0xffffff );
+    light.position.set( 0, 1, 1 ).normalize();
+    scene.add(light);
+    
+  geometry = new THREE.CubeGeometry( 25, 25, 25 );
+
+for ( var i = 0; i < 60; i ++ ) {
+    tammaterial = new THREE.MeshPhongMaterial( { map: THREE.ImageUtils.loadTexture('images/malo.jpg') } );
+    tammesh = new THREE.Mesh( geometry, tammaterial);
+    tammesh.position.x = Math.random() * 1500 - 800;
+    tammesh.position.y = Math.random() * 1500 - 800;
+    tammesh.position.z = Math.random() * 1500 - 800;
+    tammesh.rotation.x = Math.random() * 2 * Math.PI;
+    tammesh.rotation.y = Math.random() * 2 * Math.PI;
+    tammesh.rotation.z = Math.random() * 2 * Math.PI;
+    scene.add( tammesh );
+}
+  
+    
+        
+
+    renderer = new THREE.WebGLRenderer();
+    renderer.setSize( window.innerWidth + 500, window.innerHeight + 1500 );
+    document.body.appendChild( renderer.domElement );
+  
+   
+    window.addEventListener( 'resize', onWindowResize, false );
+  
+    render();
+}
+  
+function animate() {
+    tammesh.rotation.x += .01;
+    tammesh.rotation.y += .01;
+    
+   
+    
+   camera.position.x = Math.sin( Date.now() * 0.0004 ) * 100;
+   camera.position.y = Math.sin( Date.now() * 0.0005 ) * 120;
+   camera.position.z = Math.sin( Date.now() * 0.0007 ) * 300;
+    
+  
+    
+   
+
+  
+    
+
+  
+    render();
+    requestAnimationFrame( animate );
+}
+    
+  
+  
+function render() {
+    
+	
+	renderer.render( scene, camera );
+
+}
+  
+
+    
+    
+function onWindowResize() {
+    camera.aspect = window.innerWidth / window.innerHeight;
+    camera.updateProjectionMatrix();
+    renderer.setSize( window.innerWidth, window.innerHeight );
+    render();
+}
+        
+        
+</script>
+        
+    <div id="header">
+        <h1 ><a href="index.html">@moyase</a></h1>
+        </div> 
+        
+<div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <a href="index.html">Home</a> 
+  <a href="http://www.uncoolpeople.bigcartel.com/">Shop</a>
+  <a href="http://weareunco.tumblr.com/">Blog</a>
+  <a href="contact.html">Contact</a>
+  <a href="https://www.facebook.com/skateUNCO/"><img src="images/social_facebook_box_blue.png" style="width:40px"></a>
+  <a href="https://www.instagram.com/uncoboys/"><img src="images/Instagram-v051916_200.png" style="width:40px; opacity:2;"></a> 
+     
+</div>
+
+
+<span class ="hamburger" onclick="openNav()">&#9776; </span>
+
+   
+<div id="meshes">
+        </div>
+<div id="nek">
+    <iframe width="100%" height="450" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/212999007&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true"></iframe>
+        
+        <div id="space">
+            <span>   </span>
+        </div>
+        
+<div id="nek">
+    <iframe width="100%" height="450" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/256862087&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true"></iframe>
+        </div> 
+        <div id="tam">
+            <p>hello malo</p>
+        </div>
+<div id="nek">
+   <iframe width="100%" height="450" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/270876165&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true"></iframe>
+        </div>
+       
+        
+<script>
+        function openNav() {
+    document.getElementById("mySidenav").style.width = "250px";
+}
+
+function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+} 
+    </script>
+		
+	</body>
+</html>

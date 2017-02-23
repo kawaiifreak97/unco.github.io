@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>unco</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+		<style type="text/css">
+			body { 
+                padding:0;
+				margin:0;
+				font-weight: bold;
+				overflow: scroll;
+                background-color: black;
+            }
+			canvas { 
+                width: 100%; 
+                height: 100%; 
+                position: absolute;
+                z-index: -1;
+            }
+            #navconatiner{
+               
+                margin-top: 100px;
+                
+                position:absolute;
+                text-align: center;
+            }
+            
+#navcontainer ul
+{
+margin-top: 50px;
+padding: 20;
+list-style-type:inherit;
+text-align: center;
+}
+
+#navcontainer ul li { 
+    display: inline;
+    text-align: center;
+    
+            }
+
+#navcontainer ul li a
+{
+text-decoration: none;
+padding: .2em 1em;
+padding-right: 10px;    
+color: white;
+background-color: black;
+     margin: 10px;
+}
+
+#navcontainer ul li a:hover
+           {
+           color: black;
+background-color: silver;
+              
+}
+           
+        
+                
+            }
+            div.size {
+                
+            }
+            p{
+                color: white;
+                
+            }
+            h1{
+                color: azure;
+                text-align: center;
+            }
+            #header h1 a{
+                text-decoration: none;
+                color: white;
+                
+            }
+            
+             #nek{
+                margin: auto;
+                max-width: 560px;
+                z-index: 90;
+            }
+            #tam{
+                
+                display: inline;
+                text-align: center;
+                color:azure;
+                
+            }
+            #space{
+                margin: 10px;
+            }
+            #meshes{
+                
+            }
+            
+            h1 {
+  text-shadow: 0 1px 0 #ccc,
+               0 2px 0 #c9c9c9,
+               0 3px 0 #bbb,
+               0 4px 0 #b9b9b9,
+               0 5px 0 #aaa,
+               0 6px 1px rgba(0,0,0,.1),
+               0 0 5px rgba(0,0,0,.1),
+               0 1px 3px rgba(0,0,0,.3),
+               0 3px 5px rgba(0,0,0,.2),
+               0 5px 10px rgba(0,0,0,.25),
+               0 10px 10px rgba(0,0,0,.2),
+               0 20px 20px rgba(0,0,0,.15);
+}
+            </style>
+        
+	</head>
+	<body>
+        
+        <script src="css/bootstrap-theme.min.css"></script>
+
+        
+        
+        
+        
+        
+		<script src="js/three.js"></script>
+        <script src="js/three.min.js"></script>
+        <script src="js/stats.min.js"></script>
+        
+
+
+        
+        
+
+
+        
+        
+<script>
+    
+var container;    
+var camera;
+var scene;
+var renderer;
+var raycaster;
+var mouse;   
+var tammesh;
+   
+  
+init();
+animate();
+  
+function init() {
+    
+    scene = new THREE.Scene();
+    camera = new THREE.PerspectiveCamera( 70, window.innerWidth / window.innerHeight, 1, 1000);
+  
+    var light = new THREE.DirectionalLight( 0xffffff );
+    light.position.set( 0, 1, 1 ).normalize();
+    scene.add(light);
+    
+  geometry = new THREE.CubeGeometry( 25, 25, 25 );
+
+for ( var i = 0; i < 600; i ++ ) {
+    tammaterial = new THREE.MeshPhongMaterial( { map: THREE.ImageUtils.loadTexture('images/tam.jpg') } );
+    tammesh = new THREE.Mesh( geometry, tammaterial);
+    tammesh.position.x = Math.random() * 1500 - 800;
+    tammesh.position.y = Math.random() * 1500 - 800;
+    tammesh.position.z = Math.random() * 1500 - 800;
+    tammesh.rotation.x = Math.random() * 2 * Math.PI;
+    tammesh.rotation.y = Math.random() * 2 * Math.PI;
+    tammesh.rotation.z = Math.random() * 2 * Math.PI;
+    scene.add( tammesh );
+}
+  
+    
+        
+
+    renderer = new THREE.WebGLRenderer();
+    renderer.setSize( window.innerWidth + 500, window.innerHeight + 1500 );
+    document.body.appendChild( renderer.domElement );
+  
+   
+    window.addEventListener( 'resize', onWindowResize, false );
+  
+    render();
+}
+  
+function animate() {
+    tammesh.rotation.x += .01;
+    tammesh.rotation.y += .01;
+    
+   
+    
+   camera.position.x = Math.sin( Date.now() * 0.0004 ) * 100;
+   camera.position.y = Math.sin( Date.now() * 0.0005 ) * 120;
+   camera.position.z = Math.sin( Date.now() * 0.0007 ) * 300;
+    
+  
+    
+   
+
+  
+    
+
+  
+    render();
+    requestAnimationFrame( animate );
+}
+    
+  
+  
+function render() {
+    
+	
+	renderer.render( scene, camera );
+
+}
+  
+
+    
+    
+function onWindowResize() {
+    camera.aspect = window.innerWidth / window.innerHeight;
+    camera.updateProjectionMatrix();
+    renderer.setSize( window.innerWidth, window.innerHeight );
+    render();
+}
+        
+        
+</script>
+        
+    <div id="header">
+        <h1 ><a href="index.html">@kawaiifreak97</a></h1>
+        </div>    
+
+   
+<div id="meshes">
+        </div>
+<div id="nek">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/FaECaFiYmYs?rel=0" frameborder="0" allowfullscreen></iframe>
+        </div>
+        
+        <div id="space">
+            <span>   </span>
+        </div>
+        
+<div id="nek">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/txVeWrl_168?rel=0" frameborder="0" allowfullscreen></iframe>
+        </div> 
+        <div id="tam">
+            <p>hello tamari</p>
+        </div>
+<div id="nek">
+    <iframe width="560" height="400" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/289225473&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true"></iframe>
+        </div>
+        <div id="space">
+            <span>   </span>
+        </div>
+        <div id="nek">
+    <iframe src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Ftamari.gray%2Fvideos%2F1309087659114859%2F&show_text=0&width=400" width="560" height="560" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allowFullScreen="true"></iframe>
+        </div>
+        
+
+        <script type='text/javascript' src='http://weareunco.tumblr.com/'></script>
+		
+	</body>
+</html>

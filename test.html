@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<title>W3.CSS</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+
+<style>
+    body{
+        background-color: black
+    }
+    
+    </style>
+    
+<body>
+
+
+    
+<nav class="w3-sidenav w3-white w3-card-2" style="display:none" id="mySidenav">
+  <a href="javascript:void(0)" onclick="w3_close()" 
+  class="w3-closenav w3-large">&times;</a>
+  <a href="#">Link 1</a>
+  <a href="#">Link 2</a>
+  <a href="#">Link 3</a>
+  <a href="#">Link 4</a>
+  <a href="#">Link 5</a>
+</nav>
+
+<header class="w3-container w3-black">
+  <span class="w3-opennav w3-xlarge" onclick="w3_open()">&#9776;</span>
+  
+</header>
+
+
+
+     
+<script>
+function w3_open() {
+    document.getElementById("mySidenav").style.display = "block";
+}
+function w3_close() {
+    document.getElementById("mySidenav").style.display = "none";
+}
+</script>
+    
+     
+</body>
+</html> 

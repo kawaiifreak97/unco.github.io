@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>unco</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+        <link rel="stylesheet" href="css/styles.css">
+        
+        
+		<style>
+        
+            .uncopeople{
+                opacity: 0;
+                /*width: 10px;
+                height:10px;*/
+                transition: opacity 6s;   
+            } 
+            
+            /*.single{
+                padding-bottom: 0px;
+                
+                transition: padding-bottom 1s;
+            }
+            
+            .single:hover {
+                padding-bottom: 100px;
+            }*/
+            
+            /*.zeetre{
+                z-index: -100;
+                width: 50%;
+                
+                display: block;
+                margin-top: 100px;
+                margin-left: 300px;
+                margin-right: 300px;
+                margin-bottom: 200px;
+                
+                position:fixed;
+                text-align: center;
+            }
+            */
+       </style>
+        
+
+
+			
+	</head>
+    
+	<body>
+        
+        
+        <script type="text/javascript" src="js/amplitude.js"></script>
+		<script src="js/three.js"></script>
+        <script src="js/three.min.js"></script>
+        <script src="js/stats.min.js"></script>
+        
+    
+<script>
+    
+var container;    
+var camera;
+var scene;
+var renderer;
+var raycaster;
+var mouse;   
+var tammesh;
+var nashmesh;
+var zeemesh;
+var malomesh; 
+var devonmesh;
+var rakaimesh; 
+var uncomesh;    
+  
+init();
+animate();
+  
+function init() {
+    
+    scene = new THREE.Scene();
+    camera = new THREE.PerspectiveCamera( 70, window.innerWidth / window.innerHeight, 1, 1000);
+  
+    var light = new THREE.DirectionalLight( 0xffffff );
+    light.position.set( 0, 1, 1 ).normalize();
+    scene.add(light);
+
+
+var geometry = new THREE.CubeGeometry( 24, 24, 24);
+    
+    
+    var uncomaterial = new THREE.MeshPhongMaterial( { map: THREE.ImageUtils.loadTexture('images/unco.jpg') } );
+    
+    var tammaterial = new THREE.MeshPhongMaterial( { map: THREE.ImageUtils.loadTexture('images/tam.jpg') } );
+    
+    var nashmaterial = new THREE.MeshPhongMaterial( { map: THREE.ImageUtils.loadTexture('images/nash.jpg') } );
+    
+    var zeematerial = new THREE.MeshPhongMaterial( { map: THREE.ImageUtils.loadTexture('images/zee.jpg') } );
+    
+    var malomaterial = new THREE.MeshPhongMaterial( { map: THREE.ImageUtils.loadTexture('images/malo.jpg') } );
+    
+    var devonmaterial = new THREE.MeshPhongMaterial( { map: THREE.ImageUtils.loadTexture('images/188960_1285817321795_1463174_n.jpg') } );
+    
+    var rakaimaterial = new THREE.MeshPhongMaterial( { map: THREE.ImageUtils.loadTexture('images/10609451_583071211825071_4805544887684926644_n.jpg') } );
+    
+   
+    uncomesh = new THREE.Mesh(geometry, uncomaterial);
+    uncomesh.position.z = -50;
+    uncomesh.position.y = 5;
+    uncomesh.position.x = 0;
+    
+    tammesh = new THREE.Mesh(geometry, tammaterial );
+    tammesh.position.z = -50;
+    tammesh.position.y = 26;
+    tammesh.position.x = -52;
+    
+    nashmesh = new THREE.Mesh(geometry, nashmaterial );
+    nashmesh.position.z = -50;
+    nashmesh.position.y = 26;
+    nashmesh.position.x = -34;
+    
+    zeemesh = new THREE.Mesh(geometry, zeematerial );
+    zeemesh.position.z = -50;
+    zeemesh.position.y = 26;
+    zeemesh.position.x = -15;
+    
+    malomesh = new THREE.Mesh(geometry, malomaterial );
+    malomesh.position.z = -50;
+    malomesh.position.y = 26;
+    malomesh.position.x = 4;
+    
+    devonmesh = new THREE.Mesh(geometry, devonmaterial );
+    devonmesh.position.z = -50;
+    devonmesh.position.y = 26;
+    devonmesh.position.x = 24;
+    
+    rakaimesh = new THREE.Mesh(geometry, rakaimaterial );
+    rakaimesh.position.z = -50;
+    rakaimesh.position.y = 26;
+    rakaimesh.position.x = 44;
+
+    scene.add( uncomesh);
+    
+        
+
+    renderer = new THREE.WebGLRenderer();
+    renderer.setSize( window.innerWidth, window.innerHeight );
+    document.body.appendChild( renderer.domElement );
+  
+   
+    window.addEventListener( 'resize', onWindowResize, false );
+  
+    render();
+}
+  
+function animate() {
+    tammesh.rotation.x += .01;
+    tammesh.rotation.y += .01;
+    /*tammesh.position.y = Math.sin( Date.now() * 0.00049 ) * 20;*/
+    tammesh.position.y = -20;
+   
+    
+    nashmesh.rotation.x += .013;
+    nashmesh.rotation.y += .013;
+    /*nashmesh.position.y = Math.sin( Date.now() * 0.00048 ) * 20;*/
+    nashmesh.position.y = -20;
+    
+    zeemesh.rotation.x += .015;
+    zeemesh.rotation.y += .012;
+    /*zeemesh.position.y = Math.sin( Date.now() * 0.00047) * 20;*/
+    zeemesh.position.y = -20;
+    
+    malomesh.rotation.x += .016;
+    malomesh.rotation.y += .014;
+    /*malomesh.position.y = Math.sin( Date.now() * 0.00046 ) * 20;*/
+    malomesh.position.y = -20;
+    
+    devonmesh.rotation.x += .012;
+    devonmesh.rotation.y += .015;
+    /*devonmesh.position.y = Math.sin( Date.now() * 0.00045 ) * 20;*/
+    devonmesh.position.y = -20;
+    
+    rakaimesh.rotation.x += .011;
+    rakaimesh.rotation.y += .012;
+    /*rakaimesh.position.y = Math.sin( Date.now() * 0.00044 ) * 20;*/
+    rakaimesh.position.y = -20;
+    
+    uncomesh.rotation.x += .011;
+    uncomesh.rotation.y += .012;
+    /*uncomesh.position.y = Math.sin( Date.now() * 0.00044 ) * 20;*/
+    
+    
+
+  
+    render();
+    requestAnimationFrame( animate );
+}
+    
+  
+  
+function render() {
+	renderer.render( scene, camera );
+
+}
+  
+  
+function onWindowResize() {
+    camera.aspect = window.innerWidth / window.innerHeight;
+    camera.updateProjectionMatrix();
+    renderer.setSize( window.innerWidth, window.innerHeight );
+    render();
+}
+        
+        
+</script>
+        
+
+ <div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <a href="index.html">Home</a> 
+  <a href="http://www.uncoolpeople.bigcartel.com/">Shop</a>
+  <a href="http://weareunco.tumblr.com/">Blog</a>
+  <a href="contact.html">Contact</a>
+  <a href="https://www.facebook.com/skateUNCO/"><img src="images/social_facebook_box_blue.png" style="width:40px"></a>
+  <a href="https://www.instagram.com/uncoboys/"><img src="images/Instagram-v051916_200.png" style="width:40px; opacity:2;"></a> 
+     
+</div>
+
+
+<span class ="hamburger" onclick="openNav()">&#9776; </span>
+        
+        
+        
+  
+    <!--<video id="zeetre" class="zeetre" controls muted>
+    <source src="videos/zeetre.mp4" type="video/mp4">
+  </video>
+ <div class="w3-display-container w3-large"> --> 
+     
+     <!-- dummy img -->
+
+     <img src="images/rakai.jpg" 
+          value="PLAY"  onmouseover="play()";
+          id="dummy"
+          alt="Paris" class="w3-image" 
+          style="width:45%; display: block;
+                 margin: 0 auto;opacity: 0.06; 
+                 filter: alpha(opacity=6);">
+     
+     <audio id="audio1" src="songs/sz7M0OlO4QfY.128.mp3" ></audio>
+        
+        
+<!-- get a cooler form from bootsrtap gee -->        
+     
+ <div action="form.asp" class="w3-card-2 w3-display-container" >        
+  <form class="w3-container" action="form.asp">
+    <p>      
+    <label class="w3-label w3-text-brown"><b>Name</b></label>
+    <input class="w3-input w3-border w3-sand" name="first" type="text"></p>
+    <p>      
+    <label class="w3-label w3-text-brown"><b>Email</b></label>
+    <input class="w3-input w3-border w3-sand" name="email" type="text"></p>
+      <p>      
+    <label class="w3-label w3-text-brown"><b>What do you want</b></label>
+    <input class="w3-input w3-border w3-sand" name="comment" type="text"></p>
+    <p>
+    <button class="w3-btn w3-brown">Send</button></p>
+  </form>
+</div>
+     
+  
+     
+
+
+        
+<div id=uncopeople-div class="w3-display-container w3-large w3-margin-top uncopeople-div" style="">
+    <a href="tam.html"><img src="images/tam.jpg" id="people1" class="single uncopeople w3-circle w3-image w3-hover-sepia" style="width:150px;height:150px;max-width:150px;margin:20px;"></a>
+    
+    <a href="nash.html"><img src="images/nash.jpg" id="people2" class="single uncopeople w3-circle w3-image w3-hover-sepia" style="width:150px;height:150px;max-width:150px;margin:20px;"></a>
+    
+    <a href="zee.html"><img src="images/zee.jpg" id="people3" class="single uncopeople w3-circle w3-image w3-hover-sepia" style="width:150px;height:150px;max-width:150px;margin:20px;"></a>
+    
+    <a href="malo.html"><img src="images/malo.jpg" id="people4" class="single uncopeople w3-circle w3-image w3-hover-sepia" style="width:150px;height:150px;max-width:150px;margin:20px;"></a>
+    
+    <a href="devon.html"><img src="images/devon.jpg" id="people5" class="single uncopeople w3-circle w3-image w3-hover-sepia" style="width:150px;height:150px;max-width:150px;margin:20px;"></a>
+    
+    <a href="rakai.html"><img src="images/rakai.jpg" id="people6" class="single uncopeople w3-circle w3-image w3-hover-sepia" style="width:150px;height:150px;max-width:150px;margin:20px;">  </a>      
+</div>        
+
+  
+       
+  
+       
+   
+
+       
+
+        
+        
+<script>
+
+function openNav() {
+    document.getElementById("mySidenav").style.width = "250px";
+}
+
+function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+}    
+    
+/*function w3_open() {
+  document.getElementById("mySidenav").style.display = "block";
+  document.getElementById("myOverlay").style.display = "block";
+}
+
+function w3_close() {
+  document.getElementById("mySidenav").style.display = "none";
+  document.getElementById("myOverlay").style.display = "none";
+}*/
+
+/*function play() {
+  document.getElementById('audio1').play();
+}*/
+ 
+
+var img = document.getElementById("dummy"),
+    img1 = document.getElementById("people1"),
+    img2 = document.getElementById("people2"),
+    img3 = document.getElementById("people3"),
+    img4 = document.getElementById("people4"),
+    img5 = document.getElementById("people5"),
+    img6 = document.getElementById("people6"),
+    audio = document.getElementById('audio1'),
+    zeetre = document.getElementById('zeetre');
+
+    
+    
+  
+
+    img.onmouseover = function(){
+    img1.style.opacity = 5;
+    img2.style.opacity = 5;
+    img3.style.opacity = 5;
+    img4.style.opacity = 5;
+    img5.style.opacity = 5;
+    img6.style.opacity = 5;
+    /*audio.play(); 
+    zeetre.style.zIndex = 100;    
+    zeetre.play();*/
+        
+    /*uncoDiv.style.opacity = 5;*/    
+        
+      } 
+    
+    
+    /*img1.onmouseover = function(){
+        img1.style.padding: 50px;
+        
+    }*/
+   
+
+
+    
+    
+</script>        
+       
+       
+
+  
+        
+
+
+        
+        
+      
+
+     
+        
+		
+	</body>
+</html>

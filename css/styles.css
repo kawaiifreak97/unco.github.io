@@ -1,0 +1,279 @@
+
+body { 
+                padding:0;
+				margin:0;
+				font-weight: bold;
+				overflow: scroll;
+                background-color: white;
+            }
+			canvas { 
+                width: 100%; 
+                height: 100%; 
+                position: absolute;
+                z-index: -1;
+            }
+            #navconatiner{
+               
+                margin-top: 100px;
+                
+                position:absolute;
+                text-align: center;
+            }
+            
+#navcontainer ul
+{
+margin-top: 50px;
+padding: 20;
+list-style-type:inherit;
+text-align: center;
+}
+
+#navcontainer ul li { 
+    display: inline;
+    text-align: center;
+    
+            }
+
+#navcontainer ul li a
+{
+text-decoration: none;
+padding: .2em 1em;
+padding-right: 10px;    
+color: white;
+background-color: black;
+     margin: 10px;
+}
+
+#navcontainer ul li a:hover
+           {
+           color: black;
+background-color: silver;
+              
+}
+           
+        
+                
+            }
+            div.size {
+                
+            }
+            p{
+                color: white;
+                
+            }
+            h1{
+                color: azure;
+                text-align: center;
+            }
+            #header h1 a{
+                text-decoration: none;
+                color: white;
+                font-size: 50px
+                    
+                
+            }
+            
+             #nek{
+                margin: auto;
+                max-width: 560px;
+                z-index: 90;
+            }
+            #tam{
+                
+                display: inline;
+                text-align: center;
+                color:azure;
+                
+            }
+            #space{
+                margin: 10px;
+            }
+            #meshes{
+                
+            }
+            
+            h1 {
+  text-shadow: 0 1px 0 #ccc,
+               0 2px 0 #c9c9c9,
+               0 3px 0 #bbb,
+               0 4px 0 #b9b9b9,
+               0 5px 0 #aaa,
+               0 6px 1px rgba(0,0,0,.1),
+               0 0 5px rgba(0,0,0,.1),
+               0 1px 3px rgba(0,0,0,.3),
+               0 3px 5px rgba(0,0,0,.2),
+               0 5px 10px rgba(0,0,0,.25),
+               0 10px 10px rgba(0,0,0,.2),
+               0 20px 20px rgba(0,0,0,.15);
+}
+            .sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s
+}
+
+.sidenav a:hover, .offcanvas a:focus{
+    color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {
+      padding-top: 15px;
+      padding-left: 10px;
+      
+    }
+  .sidenav a {font-size: 18px;}
+}
+
+            .hamburger{
+                font-size:30px;
+                cursor:pointer;
+                color:white;
+                margin-top: 20px;
+                margin-left: 10px;
+                padding-top: 10px;
+                
+            }
+           
+                
+                
+                
+            }
+           
+        
+                
+            }
+            div.size {
+                
+            }
+            p{
+                color: white;
+                
+            }
+            h1{
+                color: azure;
+                text-align: center;
+            }
+         
+            .fishes { 
+                position: relative; top: 0; left: 0; 
+                opacity: 0.04;
+                z-index: -1;
+            } 
+            
+            .fish { 
+                position: absolute; top: 60px; left: 500px;
+                opacity: 0.1;
+                z-index: -10px;
+                
+            } 
+            .crate {
+                position: absolute;
+                left: 540px;
+            } 
+              
+            
+            .sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s
+}
+
+.sidenav a:hover, .offcanvas a:focus{
+    color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+                
+    
+    .post{
+        width:100%;
+        
+        
+    }  
+    
+    .form{
+        padding-top: 300px;
+        z-index: 200;
+    }
+    
+     .hamburger{
+                font-size:30px;
+                cursor:pointer;
+                color:white;
+                margin-top: 20px;
+                margin-left: 10px;
+                padding-top: 10px;
+                
+            }
+            .uncopeople{
+                opacity: 0;
+                /*width: 10px;
+                height:10px;*/
+                transition: opacity 6s;   
+            } 
+            
+    
+    
+#TheScene {
+  width: 400px;
+  height: 400px;
+  margin: 0 auto;
+}
+
+#TheScene canvas {
+  background: black;
+  display: block;
+  margin: 0 auto;
+}    
+           
